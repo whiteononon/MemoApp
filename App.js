@@ -12,7 +12,8 @@ import SignupScreen from './src/screens/SignupScreen'
 
 import ENV from './env.json'
 
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const firebaseConfig = {
   apiKey: ENV.FIREBASE_API_KEY,
@@ -22,14 +23,11 @@ const firebaseConfig = {
   messagingSenderId: ENV.FIREBASE_MESSAGING_SENDER_ID,
   appId: ENV.FIREBASE_APP_ID,
 };
-firebase.initializeApp(firebaseConfig);
+firebase.default.initializeApp(firebaseConfig);
 
 const Stack = createStackNavigator();
 
 export default function App() {
-
-
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
