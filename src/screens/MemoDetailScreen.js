@@ -4,21 +4,19 @@ import { StyleSheet, View, Text } from 'react-native';
 
 import CircleButton from '../elements/CircleButton'
 
-class MemoListScreen extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.memoHeader}>
-                    <Text style={styles.memoHeaderTitle}>講座のアイデア</Text>
-                    <Text style={styles.memoHeaderDate}>講座のアイデア</Text>
-                </View>
-                <View style={styles.memoContent}>
-                    <Text style={styles.memoContentTitle}>講座のアイデア</Text>
-                </View>
-                <CircleButton name="pencil" color="white" style={styles.editButton} />
+const MemoDetailScreen = ({ navigation }) => {
+    return (
+        <View style={styles.container}>
+            <View style={styles.memoHeader}>
+                <Text style={styles.memoHeaderTitle}>講座のアイデア</Text>
+                <Text style={styles.memoHeaderDate}>講座のアイデア</Text>
             </View>
-        )
-    }
+            <View style={styles.memoContent}>
+                <Text style={styles.memoContentTitle}>講座のアイデア</Text>
+            </View>
+            <CircleButton name="pencil" color="white" style={styles.editButton} onPress={() => { navigation.navigate('MemoEdit') }} />
+        </View>
+    )
 }
 
 
@@ -57,4 +55,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default MemoListScreen
+export default MemoDetailScreen
